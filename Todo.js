@@ -1,5 +1,5 @@
-
-    let TODO=[];
+  
+  let TODO=[];
     window.TODO=TODO;
     let item;
     let user= prompt("Enter Your Choice");
