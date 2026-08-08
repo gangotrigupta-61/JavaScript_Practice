@@ -54,3 +54,44 @@ function calsum(a,b){
 }
 calsum(3,5);
 
+// LEXICAL SCOPE
+function outerfunc(){
+    let x=5;
+    let y=6;
+    function innerfunc(){
+        // let z=1;
+        console.log(x);
+        console.log(y);
+    }
+    // console.log(z);
+    innerfunc();
+}
+outerfunc();
+
+let greet="hello";
+
+function changGreet(){
+    let greet="namaste";
+    console.log(greet);
+
+    function ineergreet(){
+        console.log(greet);
+    }
+    ineergreet();
+}
+console.log(greet);
+changGreet();
+
+
+// function expression
+
+let add=function(a,b){
+    return a+b;
+}
+
+let greeet=function(){
+    console.log("lhello")
+}
+greeet();
+
+// HIGHER ORDER FUNCTION'=
