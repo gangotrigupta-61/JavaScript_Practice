@@ -94,4 +94,70 @@ let greeet=function(){
 }
 greeet();
 
-// HIGHER ORDER FUNCTION'=
+// HIGHER ORDER FUNCTION
+
+function multipleGreet(func,count){
+    for(let i=0; i<count; i++){
+        func();
+    }
+};
+let greett=function(){
+    console.log("Hello");
+};
+multipleGreet(greett,20);
+
+
+function oddorEvenFactory(request){
+    if(request=="odd"){
+      return function(n){
+        console.log(!(n%2 == 0));
+        }
+    }
+    else if(request=="even"){
+        return function(n){
+            console.log(n%2==0);
+        }
+    }
+    else{
+        console.log("wrong request");
+    }
+}
+
+let requestt="odd";
+oddorEvenFactory(requestt);
+
+// Methods
+
+const calculator={
+    num:20,
+   add:function(a,b){
+    return a+b;
+   },
+   sub:function(a,b){
+      return a-b;
+   },
+   mul:function(a,b){
+    return a*b;
+   },
+   divide:function(a,b){
+    return a/b;
+   }
+};
+
+const calculatorr={
+    add(a,b){
+        return a+b;
+    },
+    sub(a,b){
+        return a-b;
+    },
+    mul(a,b){
+        return a*b;
+    },
+    dividee(a,b){
+        return a/b;
+    },
+    a:20
+
+}
+
