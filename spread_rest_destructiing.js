@@ -68,5 +68,28 @@ function min(){
 
 // destructuring
 
+let names=["tony","bruce","peter","steve"];
+
+let [winner,runnerup,...others]=names;
+
+console.log(names);
+console.log(others);
+
+const student={
+    name:"Karan",
+    age:14,
+    class:9,
+    subject:["hindi","english","maths","physics"],
+    username:"karan@123",
+    password:"abcd"
+};
+
+let {username,password}=student;
+console.log(student);
+
+let {username:user , password:secret, city:place="Mumbai"}=student;
+console.log(student);
+
+
 
 
