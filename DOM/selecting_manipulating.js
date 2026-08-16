@@ -43,7 +43,47 @@ console.dir(document.querySelector(".mainImg"));
 console.dir(document.querySelector("h1"));
 console.dir(document.querySelectorAll(".imgclass"));
 
+// using properties and methods
 
+// let head=document.querySelector('h1');
+// undefined
+// head
+// <h1>​</h1>​
+// head.innerText;
+// 'Document Object Model'
+// head.innerHTML
+// 'Document Object Model'
+// head.innerHTML;
+// 'Document Object Model'
+// head.innerHTML="<U>SPIDERMAN</U>";
+// '<U>SPIDERMAN</U>'
+// head.innerHTML=`<U>${head.innerText}</U>`;
+// '<U>SPIDERMAN</U>'
+// head.innerHTML=`<i>${head.innerText}</i>`;
+// '<i>SPIDERMAN</i>'
+// let para=document.querySelector('p');
+// undefined
+// para
+// <p>​InnerHTML​</p>​
+// console.dir(para);
+// VM1166:1 paccessKey: ""activeViewTransition: nullalign: ""ariaActionsElements: nullariaActiveDescendantElement: nullariaAtomic: nullariaAutoComplete: nullariaBrailleLabel: nullariaBrailleRoleDescription: nullariaBusy: nullariaChecked: nullariaColCount: nullariaColIndex: nullariaColIndexText: nullariaColSpan: nullariaControlsElements: nullariaCurrent: nullariaDescribedByElements: nullariaDescription: nullariaDetailsElements: nullariaDisabled: nullariaErrorMessageElements: nullariaExpanded: nullariaFlowToElements: nullariaHasPopup: nullariaHidden: nullariaInvalid: nullariaKeyShortcuts: nullariaLabel: nullariaLabelledByElements: nullariaLevel: nullariaLive: nullariaModal: nullariaMultiLine: nullariaMultiSelectable: nullariaOrientation: nullariaPlaceholder: nullariaPosInSet: nullariaPressed: nullariaReadOnly: nullariaRelevant: nullariaRequired: nullariaRoleDescription: nullariaRowCount: nullariaRowIndex: nullariaRowIndexText: nullariaRowSpan: nullariaSelected: nullariaSetSize: nullariaSort: nullariaValueMax: nullariaValueMin: nullariaValueNow: nullariaValueText: nullassignedSlot: nullattributeStyleMap: StylePropertyMap {size: 0}attributes: NamedNodeMap {length: 0}autocapitalize: ""autofocus: falsebaseURI: "http://127.0.0.1:5500/index.html"childElementCount: 0childNodes: NodeList [text]children: HTMLCollection []classList: DOMTokenList [value: '']className: ""clientHeight: 18clientLeft: 0clientTop: 0clientWidth: 685contentEditable: "inherit"currentCSSZoom: 1customElementRegistry: CustomElementRegistry {}dataset: DOMStringMap {}dir: ""draggable: falseeditContext: nullelementTiming: ""enterKeyHint: ""firstChild: textfirstElementChild: nullfocusGroup: DOMTokenList [value: '']focusGroupStart: falsehidden: falseid: ""inert: falseinnerHTML: "InnerHTML"innerText: "InnerHTML"inputMode: ""isConnected: trueisContentEditable: falselang: ""lastChild: textlastElementChild: nulllocalName: "p"namespaceURI: "http://www.w3.org/1999/xhtml"nextElementSibling: pnextSibling: textnodeName: "P"nodeType: 1nodeValue: nullnonce: ""offsetHeight: 18offsetLeft: 8offsetParent: bodyoffsetTop: 250offsetWidth: 685onabort: nullonanimationcancel: nullonanimationend: nullonanimationiteration: nullonanimationstart: nullonauxclick: nullonbeforecopy: nullonbeforecut: nullonbeforeinput: nullonbeforematch: nullonbeforepaste: nullonbeforetoggle: nullonbeforexrselect: nullonblur: nulloncancel: nulloncanplay: nulloncanplaythrough: nullonchange: nullonclick: nullonclose: nulloncommand: nulloncontentvisibilityautostatechange: nulloncontextlost: nulloncontextmenu: nulloncontextrestored: nulloncopy: nulloncuechange: nulloncut: nullondblclick: nullondrag: nullondragend: nullondragenter: nullondragleave: nullondragover: nullondragstart: nullondrop: nullondurationchange: nullonemptied: nullonended: nullonerror: nullonfocus: nullonformdata: nullonfullscreenchange: nullonfullscreenerror: nullongotpointercapture: nulloninput: nulloninvalid: nullonkeydown: nullonkeypress: nullonkeyup: nullonload: nullonloadeddata: nullonloadedmetadata: nullonloadstart: nullonlostpointercapture: nullonmousedown: nullonmouseenter: nullonmouseleave: nullonmousemove: nullonmouseout: nullonmouseover: nullonmouseup: nullonmousewheel: nullonpaste: nullonpause: nullonplay: nullonplaying: nullonpointercancel: nullonpointerdown: nullonpointerenter: nullonpointerleave: nullonpointermove: nullonpointerout: nullonpointerover: nullonpointerrawupdate: nullonpointerup: nullonprogress: nullonratechange: nullonreset: nullonresize: nullonscroll: nullonscrollend: nullonscrollsnapchange: nullonscrollsnapchanging: nullonsearch: nullonsecuritypolicyviolation: nullonseeked: nullonseeking: nullonselect: nullonselectionchange: nullonselectstart: nullonslotchange: nullonstalled: nullonsubmit: nullonsuspend: nullontimeupdate: nullontoggle: nullontransitioncancel: nullontransitionend: nullontransitionrun: nullontransitionstart: nullonvolumechange: nullonwaiting: nullonwebkitanimationend: nullonwebkitanimationiteration: nullonwebkitanimationstart: nullonwebkitfullscreenchange: nullonwebkitfullscreenerror: nullonwebkittransitionend: nullonwheel: nullouterHTML: "<p>InnerHTML</p>"outerText: "InnerHTML"ownerDocument: documentparentElement: bodyparentNode: bodypart: DOMTokenList [value: '']popover: nullprefix: nullpreviousElementSibling: h1previousSibling: textrole: nullscrollHeight: 18scrollLeft: 0scrollTop: 0scrollWidth: 685shadowRoot: nullslot: ""spellcheck: truestyle: CSSStyleDeclaration {accentColor: '', additiveSymbols: '', alignContent: '', alignItems: '', alignSelf: '', …}tabIndex: -1tagName: "P"textContent: "InnerHTML"title: ""translate: truevirtualKeyboardPolicy: ""writingSuggestions: "true"[[Prototype]]: HTMLParagraphElement
+// undefined
+// para.innerHTML;
+// 'InnerHTML'
+// para.innerText;
+// 'InnerHTML'
+// para.textContent;
+// 'InnerHTML'
+// para.innerText="abc";
+// 'abc'
+// para.innerHTML="hi I am <b>Peter Parker</b>";
+// 'hi I am <b>Peter Parker</b>'
+// para.innerText="hi I am <b>Peter Parker</b>";
+// 'hi I am <b>Peter Parker</b>'
+// para.textContent="hi I am <b>Peter Parker</b>";
+// 'hi I am <b>Peter Parker</b>'
+// para.textContent="hi I am <i>Peter Parker</i>";
+// 'hi I am <i>Peter Parker</i>'
 
 
 
