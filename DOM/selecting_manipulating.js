@@ -86,6 +86,8 @@ console.dir(document.querySelectorAll(".imgclass"));
 // 'hi I am <i>Peter Parker</i>'
 
 
+// manipulating attributes
+
 
 
 
