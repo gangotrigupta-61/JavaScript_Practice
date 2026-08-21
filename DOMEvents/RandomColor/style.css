@@ -10,5 +10,14 @@ div{
     max-width: 500px;
     border: 1px solid black;
     margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: plum;
+    border: 1px solid black;
 }
 
