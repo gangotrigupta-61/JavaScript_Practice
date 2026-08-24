@@ -19,7 +19,6 @@ setTimeout(()=>{
 console.log("JS IS A SINGLE THREADED AND ASYNCHRONOUS LANGUAGE!!")
 
 
-
 let h=document.querySelector(".heading");
 // setTimeout(()=>{
 //     h.style.color="Red";
@@ -60,32 +59,60 @@ function savetoDB(data,success,failure){
     }
 };
 
-// savetoDB(
-//     "apnacollege",
+savetoDB(
+    "Gangotri",
+    ()=>{
+        console.log("Success your data was saved");
+        savetoDB(
+            "Hello",
+            ()=>{
+                console.log("Success2: data2 saved");
+                savetoDB(
+                    "Shubhi",
+                    ()=>{
+                        console.log("Success data3 saved");
+                    },
 
-//     ()=>{
-//         console.log("Success your data was saved!!");
-//          savetoDB(
-//         "helloworld",
+                    ()=>{
+                        console.log("Failure3: weak connection");
+                    }
+                );
+            },
 
-//         ()=>{
-//            console.log("Success2 your data was saved!!");
+            ()=>{
+                   console.log("Failure2 : weak connection");
+            }
+           
+        );
+    },
 
-//              savetoDB(
-//             "HelloGangotri",
-//             ()=>{
-//                 console.log("Success3 Done!!");
+    ()=>{
+        console.log("Failure: weak connection, data not saved");
+    }
+);
 
-//             },
 
-//             ()=>{
-//                 console.log("Failure3: weakconnection");
-//             }
-//         );
-//     },
-// );
-//    ()=>{
-//     console.log("Failure: weakconnection!!");
-//    }
-//   )
-// );
+// using promises
+
+function savetoDB2(data){
+    return new Promise((resolve, reject) => {
+        let internetspeed=Math.floor(Math.random()*10)+1;
+
+        if(internetspeed>4){
+            resolve("Success : data was saved!!");
+            console.log("SUCCESS")
+        }
+        else{
+            reject("Failure: weak connection!!");
+            console.log("FAILURE");
+        }
+
+
+    });
+}
+
+
+savetoDB2("Gangotri!!");
+
+
+
