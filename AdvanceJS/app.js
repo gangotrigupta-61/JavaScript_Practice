@@ -8,18 +8,18 @@ function demo(){
     hello();
 }
 
-console.log("Calling demo function");
-demo();
-console.log("DoneBye!!");
+// console.log("Calling demo function");
+// demo();
+// console.log("DoneBye!!");
 
-setTimeout(()=>{
-    console.log("Gangotri")
-},2000);
+// setTimeout(()=>{
+//     console.log("Gangotri")
+// },2000);
 
-console.log("JS IS A SINGLE THREADED AND ASYNCHRONOUS LANGUAGE!!")
+// console.log("JS IS A SINGLE THREADED AND ASYNCHRONOUS LANGUAGE!!")
 
 
-let h=document.querySelector(".heading");
+// let h=document.querySelector(".heading");
 // setTimeout(()=>{
 //     h.style.color="Red";
 // },1000);
@@ -40,13 +40,13 @@ function changeColor(color,delay,nextColorchange){
     },delay);
 }
 
-changeColor("red",1000,()=>{
-    changeColor("yellow",1000,()=>{
-        changeColor("blue",1000,()=>{
-            changeColor("green",1000);
-        })
-    })
-});
+// changeColor("red",1000,()=>{
+//     changeColor("yellow",1000,()=>{
+//         changeColor("blue",1000,()=>{
+//             changeColor("green",1000);
+//         })
+//     })
+// });
 
 // PROMISES
 function savetoDB(data,success,failure){
@@ -59,60 +59,85 @@ function savetoDB(data,success,failure){
     }
 };
 
-savetoDB(
-    "Gangotri",
-    ()=>{
-        console.log("Success your data was saved");
-        savetoDB(
-            "Hello",
-            ()=>{
-                console.log("Success2: data2 saved");
-                savetoDB(
-                    "Shubhi",
-                    ()=>{
-                        console.log("Success data3 saved");
-                    },
+// savetoDB(
+//     "Gangotri",
+//     ()=>{
+//         console.log("Success your data was saved");
+//         savetoDB(
+//             "Hello",
+//             ()=>{
+//                 console.log("Success2: data2 saved");
+//                 savetoDB(
+//                     "Shubhi",
+//                     ()=>{
+//                         console.log("Success data3 saved");
+//                     },
 
-                    ()=>{
-                        console.log("Failure3: weak connection");
-                    }
-                );
-            },
+//                     ()=>{
+//                         console.log("Failure3: weak connection");
+//                     }
+//                 );
+//             },
 
-            ()=>{
-                   console.log("Failure2 : weak connection");
-            }
+//             ()=>{
+//                    console.log("Failure2 : weak connection");
+//             }
            
-        );
-    },
-
-    ()=>{
-        console.log("Failure: weak connection, data not saved");
-    }
-);
+//         );
+//     },
+//    ()=>{
+//         console.log("Failure: weak connection, data not saved");
+//     }
+// );
 
 
 // using promises
 
 function savetoDB2(data){
-    return new Promise((resolve, reject) => {
+    return new Promise ((resolve,reject)=>{
         let internetspeed=Math.floor(Math.random()*10)+1;
-
         if(internetspeed>4){
-            resolve("Success : data was saved!!");
-            console.log("SUCCESS")
+            resolve("SUCCESS");
         }
         else{
-            reject("Failure: weak connection!!");
-            console.log("FAILURE");
+            reject("FAILURE");
         }
+    })
+};
+
+// savetoDB2("Gangotri");
+
+// savetoDB2("ApnaCollege!!")
+// .then(()=>{
+//     console.log("Promise fulfilled!!");  
+// })
+// .catch(()=>{
+//     console.log("Promise rejected!!");
+   
+// })
+
+// Do not apply semicolon else error will come
+
+savetoDB2("Apnacollege")
+.then(()=>{
+    console.log("DATA was saved!!");
+    return savetoDB2("Hello world!!");
+})
+.then(()=>{
+    console.log("Data2 saved!!");
+    return savetoDB2("Gangotri");
+})
+.then(()=>{
+    console.log("Data3 saved!!");
+})
+.catch(()=>{
+    console.log("Promise was rejected!!");
+});
 
 
-    });
-}
 
 
-savetoDB2("Gangotri!!");
+
 
 
 
