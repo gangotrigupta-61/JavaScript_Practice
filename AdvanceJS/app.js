@@ -125,7 +125,7 @@ savetoDB2("Apnacollege")
 })
 .then(()=>{
     console.log("Data2 saved!!");
-    return savetoDB2("Gangotri");
+    return savetoDB2("Gangotri Gupta");
 })
 .then(()=>{
     console.log("Data3 saved!!");
