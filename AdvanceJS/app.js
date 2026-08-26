@@ -33,12 +33,12 @@ function demo(){
 
 //  using callback hell
 
-function changeColor(color,delay,nextColorchange){
-    setTimeout(()=>{
-        h.style.color=color;
-        if(nextColorchange)nextColorchange();
-    },delay);
-}
+// function changeColor(color,delay,nextColorchange){
+//     setTimeout(()=>{
+//         h.style.color=color;
+//         if(nextColorchange)nextColorchange();
+//     },delay);
+// }
 
 // changeColor("red",1000,()=>{
 //     changeColor("yellow",1000,()=>{
@@ -118,21 +118,84 @@ function savetoDB2(data){
 
 // Do not apply semicolon else error will come
 
-savetoDB2("Apnacollege")
-.then(()=>{
-    console.log("DATA was saved!!");
-    return savetoDB2("Hello world!!");
+// savetoDB2("Apnacollege")
+// .then(()=>{
+//     console.log("DATA was saved!!");
+//     return savetoDB2("Hello world!!");
+// })
+// .then(()=>{
+//     console.log("Data2 saved!!");
+//     return savetoDB2("Gangotri Gupta");
+// })
+// .then(()=>{
+//     console.log("Data3 saved!!");
+// })
+// .catch(()=>{
+//     console.log("Promise was rejected!!");
+// });
+
+
+// Promises are rejected and resolved with some data (valid results/errors)
+
+savetoDB2("Gangotri!!")
+.then((result)=>{
+    console.log("Data1 saved");
+    console.log("Result of promise:",result);
+    return savetoDB2("Subhi");
 })
-.then(()=>{
-    console.log("Data2 saved!!");
-    return savetoDB2("Gangotri Gupta");
+.then((result)=>{
+    console.log("Data2 saved");
+    console.log("result of promise:",result);
+    return savetoDB2("Shivam");
 })
-.then(()=>{
-    console.log("Data3 saved!!");
+.then((result)=>{
+    console.log("Data3 saved");
+    console.log("Result of promise:", result);
 })
-.catch(()=>{
-    console.log("Promise was rejected!!");
+.catch((error)=>{
+    console.log("Promise was rejected");
+    console.log("Error of promise:", error);
 });
+
+// refactoring old code
+
+let h1=document.querySelector("h1");
+function changeColor(color,delay){
+return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+          h1.style.color=color;
+          resolve("Color changed!!");
+    },delay);
+
+    // here no chance of failure of code so we can skip reject
+ });
+}
+
+changeColor("red",2000)
+.then((result)=>{
+    console.log("red!!");
+    console.log("Result :", result);
+    return changeColor("yellow",2000);
+})
+.then((result)=>{
+   console.log("yellow!!");
+    console.log("Result :", result);
+    return changeColor("blue",2000);
+})
+.then((result)=>{
+ console.log("blue!!");
+    console.log("Result:", result);
+    return changeColor("green",2000);
+})
+.then(()=>{
+    console.log("Green!!");
+})
+.catch((error)=>{
+    console.log("Error is:",error);
+})
+
+
+
 
 
 
