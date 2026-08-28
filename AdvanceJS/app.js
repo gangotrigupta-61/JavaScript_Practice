@@ -195,6 +195,27 @@ changeColor("red",2000)
 })
 
 
+// ASYNC
+
+async function greet(){
+    console.log("GREET HELLO");
+    return "hello";
+}
+
+// console.log(greet());
+
+greet()
+.then((result)=>{
+    console.log("GREET HELLO", result);
+})
+.catch((error)=>{
+    console.log("GREET ERROR:", error);
+})
+
+
+
+
+
 
 
 
