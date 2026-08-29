@@ -166,33 +166,43 @@ return new Promise((resolve,reject)=>{
           h1.style.color=color;
           resolve("Color changed!!");
     },delay);
-
     // here no chance of failure of code so we can skip reject
  });
 }
 
-changeColor("red",2000)
-.then((result)=>{
-    console.log("red!!");
-    console.log("Result :", result);
-    return changeColor("yellow",2000);
-})
-.then((result)=>{
-   console.log("yellow!!");
-    console.log("Result :", result);
-    return changeColor("blue",2000);
-})
-.then((result)=>{
- console.log("blue!!");
-    console.log("Result:", result);
-    return changeColor("green",2000);
-})
-.then(()=>{
-    console.log("Green!!");
-})
-.catch((error)=>{
-    console.log("Error is:",error);
-})
+// changeColor("red",2000)
+// .then((result)=>{
+//     console.log("red!!");
+//     console.log("Result :", result);
+//     return changeColor("yellow",2000);
+// })
+// .then((result)=>{
+//    console.log("yellow!!");
+//     console.log("Result :", result);
+//     return changeColor("blue",2000);
+// })
+// .then((result)=>{
+//  console.log("blue!!");
+//     console.log("Result:", result);
+//     return changeColor("green",2000);
+// })
+// .then(()=>{
+//     console.log("Green!!");
+// })
+// .catch((error)=>{
+//     console.log("Error is:",error);
+// })
+
+// NOW by using await this has become very easy to write in syntax
+
+async function democolor() {
+    await changeColor("Red",1000);
+    await changeColor("Orange", 1000);
+    await changeColor("green", 1000);
+    changeColor("yellow",1000);
+}
+
+democolor();
 
 
 // ASYNC
@@ -203,14 +213,69 @@ async function greet(){
 }
 
 // console.log(greet());
-
 greet()
 .then((result)=>{
     console.log("GREET HELLO", result);
 })
 .catch((error)=>{
     console.log("GREET ERROR:", error);
-})
+});
+
+// AWAIT 
+ 
+function getNum(){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            let num=Math.floor(Math.random()*10)+1;
+             console.log(num);
+             resolve();
+        },1000);
+    });
+};
+
+async function demo() {
+    await getNum();
+    await getNum();
+    await getNum();
+    getNum();
+}
+demo();
+
+
+let h4=document.querySelector("h4");
+function changeColour(color,delay){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let num=Math.floor(Math.random()*5)+1;
+            if(num>3){
+                reject("Promise rejected");
+            }
+            h4.style.color=color;
+            resolve("Color Changed!!");
+        },delay);
+    });
+};
+
+async function c(){
+    try{
+        await changeColour("red",1000);
+        await changeColour("orange",1000);
+        await changeColour("green",1000);
+    }
+    catch(error){
+        console.log("Error caught:");
+        console.log(error);
+    }
+}
+
+
+c();
+
+
+
+
+
+
 
 
 
