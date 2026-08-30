@@ -4,12 +4,20 @@ console.log(jsonRes);
 
 let validRes=JSON.parse(jsonRes);
 console.log(validRes);
+console.log(validRes.fact);
+console.log(validRes.length);
 
-let resofstringify= JSON.stringify(validRes);
-console.log(resofstringify);
+// let resofstringify= JSON.stringify(validRes);
+// console.log(resofstringify);
 
-// let student={
-//     name="shraddha",
-//     marks=95,
-// };
+let student={
+    name:"gangotri",
+     marks:94
+};
+
+console.log(JSON.stringify(student));
+
+
+
+
 
