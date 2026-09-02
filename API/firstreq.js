@@ -1,4 +1,4 @@
-let url="https://catfact.ninja/fact";
+// let url="https://catfact.ninja/fact";
 // fetch(url)
 // .then((response)=>{
 //     // console.log(response);
